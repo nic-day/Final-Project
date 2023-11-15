@@ -10,13 +10,13 @@ cModel Technology
 Z0 dC:/Users/nday9/OneDrive/Pictures/Documents/GitHub/Final-Project/sv
 vdatapath
 Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z2 !s110 1700087868
+Z2 !s110 1700087942
 !i10b 1
 !s100 V;C_hS8f1BHnb36LBjYJ01
 I<ahlD=61ndBBilL@NE8dL1
 S1
 R0
-Z3 w1700084166
+Z3 w1700087918
 Z4 8datapath.sv
 Z5 Fdatapath.sv
 !i122 0
@@ -26,7 +26,7 @@ Z7 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z8 !s108 1700087868.000000
+Z8 !s108 1700087942.000000
 !s107 fsm_tb.sv|fsm.sv|datapath.sv|
 Z9 !s90 datapath.sv|fsm.sv|fsm_tb.sv|
 !i113 0
@@ -132,15 +132,15 @@ vstimulus
 R1
 R2
 !i10b 1
-!s100 JzjlZI7H]:Qbe;33?hK2C3
-I=VaOQ8NQ4_oe_D_aA7JEO3
+!s100 UeYN@VoYOJ45mC9R<7U4B1
+IYVC?bz6]b<KTN^8OKliXD2
 S1
 R0
-w1700087032
+w1700087932
 8fsm_tb.sv
 Ffsm_tb.sv
 !i122 0
-L0 2 47
+L0 2 45
 R6
 R7
 r1

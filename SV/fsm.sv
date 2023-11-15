@@ -26,14 +26,19 @@ module FSM (clk, reset, on, seed, display);
       else nextstate = S0;
        end
        S1: begin
+
         datapath start(seed, display);
         evolution_stored = display;
+
+        
         if (on) nextstate = S2;
         else nextstate = S0;
        end
        S2: begin
+
         datapath on(evolution_stored , display);
         evolution_stored = display;
+
         if (on) nextstate = S2;
         else nextstate = S0;
        end
