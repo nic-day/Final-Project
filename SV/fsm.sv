@@ -8,8 +8,9 @@ module FSM (clk, reset, on, seed, display);
    output logic [63:0]  display; //output of the display.
 
    logic [63:0] evolution_stored; //variable to store the evolved grid
-
-   typedef enum 	logic [3:0] {S0, S1, S2} statetype;
+   logic [1:0] in; //for the mux 
+   logic [63:0] in2;
+   typedef enum 	logic [3:0] {S0, S1, S2,S3} statetype;
    statetype state, nextstate;
 
    // state register
@@ -18,32 +19,44 @@ module FSM (clk, reset, on, seed, display);
      else       state <= nextstate;
 
 
+    always @(*) begin
+      if (in == 2'b01) begin
+      in2 = seed;
+      end
+      else if(in == 2'b10) begin
+      in2 = display;
+      end
+      else begin
+      in2 = 64'h0000000000000000;
+      end
+    end
+
+    datapath start (in2, display);
+
    // next state logic
    always_comb
      case (state)
        S0: begin
+        in  =2'b00;
       if (on) nextstate = S1;
       else nextstate = S0;
        end
        S1: begin
-
-        datapath start(seed, display);
-        evolution_stored = display;
-
-        
+        in = 2'b01;
         if (on) nextstate = S2;
         else nextstate = S0;
        end
        S2: begin
-
-        datapath on(evolution_stored , display);
-        evolution_stored = display;
-
-        if (on) nextstate = S2;
+        in = 2'b10;
+        if (on) nextstate = S3;
         else nextstate = S0;
        end
+       S3: begin
+        nextstate = S2;
+       end
        
-         default: begin 	  
+         default: begin 	 
+        in = 2'b00; 
 	      nextstate <= S0;
          end
       endcase

@@ -40,6 +40,7 @@ view wave
 # add wave -hex -r /stimulus/*
 add wave -noupdate -divider -height 32 "FSM"
 add wave -hex /stimulus/dut/display
+add wave -hex /stimulus/dut/in2
 add wave -hex /stimulus/dut/reset
 add wave -hex /stimulus/dut/clk
 add wave -hex /stimulus/dut/on

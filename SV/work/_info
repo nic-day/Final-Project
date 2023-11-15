@@ -1,154 +1,204 @@
 m255
 K4
 z2
+Z0 !s99 nomlopt
+R0
+R0
+!s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/nday9/OneDrive/Pictures/Documents/GitHub/Final-Project/sv
+Z1 dC:/Users/nday9/OneDrive/Pictures/Documents/GitHub/Final-Project/sv
+T_opt
+!s110 1700090115
+VTJg2K2]E>i5k=Idgkbc];1
+Z2 04 8 4 work stimulus fast 0
+=1-50ebf6e1bf00-65555103-b1-3c2c
+Z3 !s124 OEM100
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.3;73
+R1
+T_opt1
+!s110 1700090466
+VG_?LB@f`?ChC<SZYnN[1o0
+R2
+=1-50ebf6e1bf00-65555261-35d-3fc0
+R3
+R4
+R5
+n@_opt1
+R6
 vdatapath
-Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z2 !s110 1700087942
+Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z8 !s110 1700090465
 !i10b 1
 !s100 V;C_hS8f1BHnb36LBjYJ01
 I<ahlD=61ndBBilL@NE8dL1
 S1
-R0
-Z3 w1700087918
-Z4 8datapath.sv
-Z5 Fdatapath.sv
+R1
+Z9 w1700087918
+Z10 8datapath.sv
+Z11 Fdatapath.sv
 !i122 0
 L0 7 79
-Z6 VDg1SIo80bB@j0V0VzS_@n1
-Z7 OL;L;2021.3;73
+Z12 VDg1SIo80bB@j0V0VzS_@n1
+Z13 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z8 !s108 1700087942.000000
-!s107 fsm_tb.sv|fsm.sv|datapath.sv|
-Z9 !s90 datapath.sv|fsm.sv|fsm_tb.sv|
+Z14 !s108 1700090465.000000
+Z15 !s107 fsm_tb.sv|fsm.sv|datapath.sv|
+Z16 !s90 -reportprogress|300|datapath.sv|fsm.sv|fsm_tb.sv|
 !i113 0
-Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z11 tCvgOpt 0
+Z17 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
 vevolve3
-R1
-R2
+R7
+R8
 !i10b 1
 !s100 IXoNo]gEC0MZaJ37;nO_30
 IM8klP?6AAQElYj^^>dMog1
 S1
-R0
-R3
-R4
-R5
+R1
+R9
+R10
+R11
 !i122 0
 L0 88 14
-R6
-R7
+R12
+R13
 r1
 !s85 0
 31
-R8
-Z12 !s107 fsm_tb.sv|fsm.sv|datapath.sv|
-R9
+R14
+R15
+R16
 !i113 0
-R10
-R11
+R17
+R5
 vevolve5
-R1
-R2
+R7
+R8
 !i10b 1
 !s100 I^MlKOK_W3OeeJBMAXc:W2
 I:N2@j2?Hz8T^_^8H8DMB42
 S1
-R0
-R3
-R4
-R5
+R1
+R9
+R10
+R11
 !i122 0
 L0 103 17
-R6
-R7
+R12
+R13
 r1
 !s85 0
 31
-R8
-R12
-R9
+R14
+R15
+R16
 !i113 0
-R10
-R11
+R17
+R5
 vevolve8
-R1
-R2
+R7
+R8
 !i10b 1
 !s100 X=VQ5`4bnRg0]4e9c_9PV1
 I9=CLF7`lSL3IgfFX:JW2G3
 S1
-R0
-R3
-R4
-R5
+R1
+R9
+R10
+R11
 !i122 0
 L0 122 23
-R6
-R7
+R12
+R13
 r1
 !s85 0
 31
-R8
-R12
-R9
+R14
+R15
+R16
 !i113 0
-R10
-R11
-vrules
+R17
+R5
+vFSM
+R7
+R8
+!i10b 1
+!s100 8B7<i^A1FQOCT7IkJ2Z]h3
+IGEdh66jR[La2iCOZCEgF41
+S1
 R1
-R2
+w1700090132
+8fsm.sv
+Ffsm.sv
+!i122 0
+L0 1 64
+R12
+R13
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 0
+R17
+R5
+n@f@s@m
+vrules
+R7
+R8
 !i10b 1
 !s100 JL3^U4`<X^MUIi:l8LemW2
 IBcFBl4c5NRZOko>2=jFA93
 S1
-R0
-R3
-R4
-R5
+R1
+R9
+R10
+R11
 !i122 0
 L0 147 9
-R6
-R7
+R12
+R13
 r1
 !s85 0
 31
-R8
-R12
-R9
+R14
+R15
+R16
 !i113 0
-R10
-R11
+R17
+R5
 vstimulus
-R1
-R2
+R7
+R8
 !i10b 1
-!s100 UeYN@VoYOJ45mC9R<7U4B1
-IYVC?bz6]b<KTN^8OKliXD2
+!s100 E?MzOhLdD`82oh=9O6I``3
+IH;kHem@]f>MI;1`7?_mAL0
 S1
-R0
-w1700087932
+R1
+w1700089820
 8fsm_tb.sv
 Ffsm_tb.sv
 !i122 0
 L0 2 45
-R6
-R7
+R12
+R13
 r1
 !s85 0
 31
-R8
-R12
-R9
+R14
+R15
+R16
 !i113 0
-R10
-R11
+R17
+R5

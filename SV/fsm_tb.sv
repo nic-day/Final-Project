@@ -33,7 +33,7 @@ module stimulus ();
    always 
      begin
 	desc3 = handle3;
-	#5 $fdisplay(desc3,"Reset: %b || On Switch: %b Seed: %b", 
+	#5 $fdisplay(desc3,"Reset: %b || On Switch: %b Seed: %h", 
 		     reset, on, seed);
      end   
    
