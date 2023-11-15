@@ -1,0 +1,22 @@
+# do fsm.do
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 16:37:48 on Nov 15,2023
+# vlog datapath.sv fsm.sv fsm_tb.sv 
+# -- Compiling module datapath
+# -- Compiling module evolve3
+# -- Compiling module evolve5
+# -- Compiling module evolve8
+# -- Compiling module rules
+# -- Compiling module FSM
+# ** Error: fsm.sv(29): Checker 'datapath' not found.  Instantiation 'st' must be of a visible checker.
+# 
+# ** Error: fsm.sv(35): Checker 'datapath' not found.  Instantiation 'st1' must be of a visible checker.
+# 
+# -- Compiling module stimulus
+# End time: 16:37:48 on Nov 15,2023, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./fsm.do line 30
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog datapath.sv fsm.sv  fsm_tb.sv"

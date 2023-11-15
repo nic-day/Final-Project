@@ -22,7 +22,6 @@ module FSM (clk, reset, on, seed, display);
    always_comb
      case (state)
        S0: begin
-         y= 6'b0;
       if (on) nextstate = S1;
       else nextstate = S0;
        end
@@ -39,8 +38,7 @@ module FSM (clk, reset, on, seed, display);
         else nextstate = S0;
        end
        
-         default: begin
-	      y <= 6'b0;	  	  
+         default: begin 	  
 	      nextstate <= S0;
          end
       endcase
