@@ -6,7 +6,7 @@ module stimulus ();
    logic  on;
 
    logic  [63:0] display;
-   logic  [63:0] seed = 64'h0405_0600_0000_000;
+   logic  [63:0] seed = 64'h0412_6424_0034_3C28;
 
 
    integer handle3;
@@ -33,7 +33,7 @@ module stimulus ();
    always 
      begin
 	desc3 = handle3;
-	#20 $fdisplay(desc3,"OUTPUT: 
+	#10 $fdisplay(desc3,"OUTPUT: 
      %b
      %b
      %b
@@ -42,7 +42,8 @@ module stimulus ();
      %b
      %b
      %b 
-     ||Reset: %b || On Switch: %b Seed: %h || ",seed[63:56], seed[55:48], seed[47:40], seed[39:32], seed[31:24], seed[23:16], seed[15:8], seed[7:0], reset, on, seed);
+     ||Reset: %b || On Switch: %b Seed: %h Output: %h|| ",display[63:56], display[55:48], display[47:40], display[39:32], display[31:24], display[23:16], display[15:8], display[7:0], 
+     reset, on, seed, display);
      end   
    
    initial 
