@@ -4,6 +4,13 @@ z2
 Z0 !s99 nomlopt
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -33,15 +40,26 @@ R4
 R5
 n@_opt1
 R6
+R1
+T_opt2
+!s110 1700149453
+VfaBOa=KXhYQ26omXAomN;1
+R2
+=1-50ebf6e1bf00-655638cd-95-1adc
+R3
+R4
+R5
+n@_opt2
+R6
 vdatapath
 Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z8 !s110 1700090465
+Z8 !s110 1700149452
 !i10b 1
 !s100 V;C_hS8f1BHnb36LBjYJ01
 I<ahlD=61ndBBilL@NE8dL1
 S1
 R1
-Z9 w1700087918
+Z9 w1700148713
 Z10 8datapath.sv
 Z11 Fdatapath.sv
 !i122 0
@@ -51,7 +69,7 @@ Z13 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z14 !s108 1700090465.000000
+Z14 !s108 1700149452.000000
 Z15 !s107 fsm_tb.sv|fsm.sv|datapath.sv|
 Z16 !s90 -reportprogress|300|datapath.sv|fsm.sv|fsm_tb.sv|
 !i113 0
@@ -133,15 +151,15 @@ vFSM
 R7
 R8
 !i10b 1
-!s100 8B7<i^A1FQOCT7IkJ2Z]h3
-IGEdh66jR[La2iCOZCEgF41
+!s100 iV>2KR^0@5WL7FSHcogBJ2
+I1fONlH_dbnY;6KYU5RdK_1
 S1
 R1
-w1700090132
+w1700149419
 8fsm.sv
 Ffsm.sv
 !i122 0
-L0 1 64
+L0 1 68
 R12
 R13
 r1
@@ -186,7 +204,7 @@ R8
 IH;kHem@]f>MI;1`7?_mAL0
 S1
 R1
-w1700089820
+R9
 8fsm_tb.sv
 Ffsm_tb.sv
 !i122 0

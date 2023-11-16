@@ -21,14 +21,18 @@ module FSM (clk, reset, on, seed, display);
 
     always @(*) begin
       if (in == 2'b01) begin
-      in2 = seed;
+      in2 <= seed;
       end
       else if(in == 2'b10) begin
-      in2 = display;
+      in2 <= evolution_stored;
       end
       else begin
-      in2 = 64'h0000000000000000;
+      in2 <= 64'h0000000000000000;
       end
+    end
+
+    always_ff @(posedge clk) begin
+      evolution_stored <= display;
     end
 
     datapath start (in2, display);
