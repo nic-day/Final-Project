@@ -47,6 +47,7 @@ add wave -hex /stimulus/dut/on
 add wave -hex /stimulus/dut/seed
 add wave -hex /stimulus/dut/state
 add wave -hex /stimulus/dut/nextstate
+add wave -hex /stimulus/dut/hex_value
 
 
 add list -hex -r /stimulus/*

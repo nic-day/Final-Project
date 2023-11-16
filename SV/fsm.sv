@@ -52,7 +52,7 @@ module FSM (clk, reset, on, seed, display);
        end
        S2: begin
         in = 2'b10;
-        if (on) nextstate = S3;
+        if (on) nextstate = S2;
         else nextstate = S0;
        end
        S3: begin
@@ -65,4 +65,22 @@ module FSM (clk, reset, on, seed, display);
          end
       endcase
 
+logic [63:0] hex_value;
+logic [7:0] binary_array[8];
+assign binary_array[0] = 8'b00000100;
+assign binary_array[1] = 8'b00000101;
+assign binary_array[2] = 8'b00000110;
+assign binary_array[3] = 8'b00000000;
+assign binary_array[4] = 8'b00000000;
+assign binary_array[5] = 8'b00000000;
+assign binary_array[6] = 8'b00000000;
+assign binary_array[7] = 8'b00000000;
+always_comb begin
+    hex_value = {binary_array[0], binary_array[1], binary_array[2], binary_array[3],
+                 binary_array[4], binary_array[5], binary_array[6], binary_array[7]};
+  end
+
+
+
 endmodule
+

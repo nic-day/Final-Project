@@ -85,24 +85,27 @@ module datapath ( grid, grid_evolve );
 endmodule // top
 
 
-module evolve3 (next_state, vector1, vector2, vector3, current_state);
-	
+module evolve3 #(parameter GRID_SIZE = 8) (next_state,  vector1, vector2, vector3, current_state);
+
+
+
    input logic  vector1;
    input logic  vector2;
    input logic  vector3;
    input logic  current_state;
    output logic next_state;
    
-   logic [3:0] 	sum;
+   logic [GRID_SIZE-1:0] 	sum;
    
    assign sum = vector1 + vector2 + vector3;
    rules r1 (sum, current_state, next_state);
    
 endmodule // evolve3
 
-module evolve5 (next_state, vector1, vector2, vector3, 
+module evolve5 #(parameter GRID_SIZE = 8) (next_state, vector1, vector2, vector3, 
 		vector4, vector5, current_state);
    
+
    input logic   vector1;
    input logic 	 vector2;
    input logic 	 vector3;
@@ -111,7 +114,7 @@ module evolve5 (next_state, vector1, vector2, vector3,
    input logic 	 current_state;
    output logic  next_state;
    
-   logic [3:0] 	 sum;
+   logic [GRID_SIZE-1:0] 	 sum;
    
    assign sum = vector1 + vector2 + vector3 + vector4 + vector5;
    rules r1 (sum, current_state, next_state);
@@ -119,7 +122,7 @@ module evolve5 (next_state, vector1, vector2, vector3,
 endmodule // evolve5
 
 
-module evolve8 (next_state, vector1, vector2, vector3, 
+module evolve8 #(parameter GRID_SIZE = 8) (next_state, vector1, vector2, vector3, 
 		vector4, vector5, vector6, 
 		vector7, vector8, current_state);
    
@@ -135,7 +138,7 @@ module evolve8 (next_state, vector1, vector2, vector3,
    input logic 	current_state;
    output logic next_state;
    
-   logic [3:0] 	sum;
+   logic [GRID_SIZE-1:0] 	sum;
    
    assign sum = vector1 + vector2 + vector3 + vector4 + 
 		vector5 + vector6 + vector7 + vector8;
@@ -144,9 +147,9 @@ module evolve8 (next_state, vector1, vector2, vector3,
 endmodule // evolve8
 
 
-module rules (pop_count, current_state, next_state);
+module rules #(parameter GRID_SIZE = 8) (pop_count, current_state, next_state);
    
-   input logic [3:0] pop_count;
+   input logic [GRID_SIZE-1:0] pop_count;
    input logic 	     current_state;
    output logic      next_state;
    
