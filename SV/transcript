@@ -5,7 +5,7 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 11:05:35 on Nov 16,2023
+# Start time: 13:35:22 on Nov 17,2023
 # vlog datapath.sv fsm.sv fsm_tb.sv 
 # -- Compiling module datapath
 # -- Compiling module evolve3
@@ -18,10 +18,10 @@
 # 
 # Top level modules:
 # 	stimulus
-# End time: 11:05:35 on Nov 16,2023, Elapsed time: 0:00:00
+# End time: 13:35:22 on Nov 17,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 11:05:35 on Nov 16,2023
+# Start time: 13:35:22 on Nov 17,2023
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
 # //  ModelSim SE-64 2021.3 Jul 13 2021
@@ -48,9 +48,9 @@
 # .list
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: nday9  Hostname: NICKS-PC  ProcessID: 15404
-#           Attempting to use alternate WLF file "./wlft9rxxde".
+#           Attempting to use alternate WLF file "./wlft1rqj81".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft9rxxde
+#           Using alternate file: ./wlft1rqj81
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
@@ -59,5 +59,5 @@
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
-# End time: 11:05:37 on Nov 16,2023, Elapsed time: 0:00:02
+# End time: 13:35:24 on Nov 17,2023, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 2

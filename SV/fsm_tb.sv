@@ -33,7 +33,7 @@ module stimulus ();
    always 
      begin
 	desc3 = handle3;
-	#10 $fdisplay(desc3,"OUTPUT: 
+	#5 $fdisplay(desc3,"OUTPUT: 
      %b
      %b
      %b
