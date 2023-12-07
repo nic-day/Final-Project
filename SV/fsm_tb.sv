@@ -5,15 +5,16 @@ module stimulus ();
    logic  reset;
    logic  on;
 
-   logic  [63:0] display;
-   logic  [63:0] seed = 64'h0412_6424_0034_3C28;
-
+   logic  [255:0] display;
+   logic  [255:0] seed = 255'h0000200020002000000020002000200000000000000000000010001000100000;
+   logic [255:0] keyout;
 
    integer handle3;
    integer desc3;
+   integer desc2;
    
    // Instantiate DUT
-   FSM dut (clk, reset, on, seed, display);   
+   FSM dut (clk, reset, on, seed, display, keyout);   
    
    // Setup the clock to toggle every 1 time units 
    initial 
@@ -27,13 +28,20 @@ module stimulus ();
 	// Gives output file name
 	handle3 = $fopen("fsm.out");
 	// Tells when to finish simulation
-	#1000 $finish;		
+	#1000000 $finish;		
      end
-
+   
+   always 
+     begin
+     desc2=handle3;
+     #20 $fdisplay (desc2,"New Seed: %h", keyout);
+     #100000000 $finish;
+     end
    always 
      begin
 	desc3 = handle3;
-	#5 $fdisplay(desc3,"OUTPUT: 
+     
+	#10 $fdisplay(desc3,"OUTPUT: 
      %b
      %b
      %b
@@ -42,8 +50,17 @@ module stimulus ();
      %b
      %b
      %b 
-     ||Reset: %b || On Switch: %b Seed: %h Output: %h|| ",display[63:56], display[55:48], display[47:40], display[39:32], display[31:24], display[23:16], display[15:8], display[7:0], 
-     reset, on, seed, display);
+     %b
+     %b
+     %b
+     %b
+     %b
+     %b
+     %b
+     %b 
+     
+     ||Reset: %b || On Switch: %b Seed: %h|| ",display[15:0], display[31:16], display[47:32], display[63:48], display[79:64], display[95:80], display[111:96], display[127:112],  display[143:128], display[159:144], display[175:160], display[191:176],  display[207:192],  display[223:208], display[239:224], display[255:240],
+     reset, on, seed);
      end   
    
    initial 
