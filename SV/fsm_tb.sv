@@ -6,7 +6,7 @@ module stimulus ();
    logic  on;
 
    logic  [255:0] display;
-   logic  [255:0] seed = 255'h0000200020002000000020002000200000000000000000000010001000100000;
+   logic  [255:0] seed = 256'h20b541957254c386f5459bda8eac32efa1ce23c28761dea7713acc2fab412b34;
    logic [255:0] keyout;
 
    integer handle3;

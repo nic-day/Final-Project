@@ -58,10 +58,6 @@ module FSM (clk, reset, on, seed, display, keyout);
         if (on) nextstate = S2;
         else nextstate = S0;
        end
-       S3: begin
-        nextstate = S2;
-       end
-       
          default: begin 	 
         in = 2'b00; 
 	      nextstate <= S0;
