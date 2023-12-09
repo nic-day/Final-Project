@@ -59,8 +59,8 @@ module stimulus ();
      %b
      %b 
      
-     ||Reset: %b || On Switch: %b Seed: %h|| ",display[15:0], display[31:16], display[47:32], display[63:48], display[79:64], display[95:80], display[111:96], display[127:112],  display[143:128], display[159:144], display[175:160], display[191:176],  display[207:192],  display[223:208], display[239:224], display[255:240],
-     reset, on, seed);
+     ||Reset: %b || On Switch: %b Seed: %h|| Current Generation: %h ",display[15:0], display[31:16], display[47:32], display[63:48], display[79:64], display[95:80], display[111:96], display[127:112],  display[143:128], display[159:144], display[175:160], display[191:176],  display[207:192],  display[223:208], display[239:224], display[255:240],
+     reset, on, seed, display);
      end   
    
    initial 

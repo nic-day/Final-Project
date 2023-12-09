@@ -1,14 +1,14 @@
 /*
- 
- Conway's Game of Life modeled in SVerilog
- 
- */
+
+Conway's Game of Life modeled in SVerilog
+
+*/
 
 module datapath ( grid, grid_evolve );
 
 
-   output logic [255:0] grid_evolve;
-   input logic [255:0] grid;
+	output logic [255:0] grid_evolve;
+	input logic [255:0] grid;
 
 evolve3 e0_0 (grid_evolve[0], grid[1], grid[16], grid[17], grid[0]);
 evolve5 e0_1 (grid_evolve[1], grid[0], grid[2], grid[16], grid[17], grid[18], grid[1]);
@@ -281,80 +281,66 @@ evolve5 e15_12 (grid_evolve[252], grid[251], grid[253], grid[235], grid[236], gr
 evolve5 e15_13 (grid_evolve[253], grid[252], grid[254], grid[236], grid[237], grid[238], grid[253]);
 evolve5 e15_14 (grid_evolve[254], grid[253], grid[255], grid[237], grid[238], grid[239], grid[254]);
 evolve3 e15_15 (grid_evolve[255], grid[238], grid[239], grid[254], grid[255]);
- 
-endmodule // top
 
-
+endmodule
 module evolve3 #(parameter GRID_SIZE = 16) (next_state,  vector1, vector2, vector3, current_state);
 
+	input logic  vector1;
+	input logic  vector2;
+     input logic  vector3;
+     input logic  current_state;
+    output logic next_state;
 
+    logic [GRID_SIZE-1:0] 	sum;
+    assign sum = vector1 + vector2 + vector3;
+    rules r1 (sum, current_state, next_state);
 
-   input logic  vector1;
-   input logic  vector2;
-   input logic  vector3;
-   input logic  current_state;
-   output logic next_state;
-   
-   logic [GRID_SIZE-1:0] 	sum;
-   
-   assign sum = vector1 + vector2 + vector3;
-   rules r1 (sum, current_state, next_state);
-   
 endmodule // evolve3
 
-module evolve5 #(parameter GRID_SIZE = 16) (next_state, vector1, vector2, vector3, 
-		vector4, vector5, current_state);
-   
+module evolve5 #(parameter GRID_SIZE = 16) (next_state, vector1, vector2, vector3, vector4, vector5, current_state);
 
-   input logic   vector1;
-   input logic 	 vector2;
-   input logic 	 vector3;
-   input logic 	 vector4;
-   input logic 	 vector5;
-   input logic 	 current_state;
-   output logic  next_state;
-   
-   logic [GRID_SIZE-1:0] 	 sum;
-   
+    input logic   vector1;
+    input logic 	 vector2;
+    input logic 	 vector3;
+    input logic 	 vector4;
+    input logic 	 vector5;
+    input logic 	 current_state;
+    output logic  next_state;
+
+  logic [GRID_SIZE-1:0] 	 sum;
+
    assign sum = vector1 + vector2 + vector3 + vector4 + vector5;
-   rules r1 (sum, current_state, next_state);
-   
-endmodule // evolve5
+    rules r1 (sum, current_state, next_state);
 
+ endmodule // evolve5
 
-module evolve8 #(parameter GRID_SIZE = 16) (next_state, vector1, vector2, vector3, vector4, vector5, vector6, vector7, vector8, current_state);
-   
-   input logic 	vector1;
-   input logic 	vector2;
-   input logic 	vector3;
-   input logic 	vector4;
-   input logic 	vector5;
-   input logic 	vector6;
-   input logic 	vector7;
-   input logic 	vector8;
-   input logic 	current_state;
-   output logic next_state;
-   
-   logic [GRID_SIZE-1:0] 	sum;
-   
-   assign sum = vector1 + vector2 + vector3 + vector4 + 
-		vector5 + vector6 + vector7 + vector8;
-   rules r1 (sum, current_state, next_state);
-   
+ module evolve8 #(parameter GRID_SIZE = 16) (next_state, vector1, vector2, vector3, vector4, vector5, vector6, vector7, vector8, current_state);
+
+    input logic 	vector1;
+    input logic 	vector2;
+    input logic 	vector3;
+    input logic 	vector4;
+    input logic 	vector5;
+    input logic 	vector6;
+    input logic 	vector7;
+    input logic 	vector8;
+    input logic 	current_state;
+    output logic next_state;
+
+    logic [GRID_SIZE-1:0] 	sum;
+
+    assign sum = vector1 + vector2 + vector3 + vector4 + vector5 + vector6 + vector7 + vector8;
+    rules r1 (sum, current_state, next_state);
+
 endmodule // evolve8
 
 
-module rules #(parameter GRID_SIZE = 16) (pop_count, current_state, next_state);
-   
-   input logic [GRID_SIZE-1:0] pop_count;
-   input logic 	     current_state;
-   output logic      next_state;
-   
-   assign next_state = (pop_count == 2 & current_state) | pop_count == 3;
-   
+ module rules #(parameter GRID_SIZE = 16) (pop_count, current_state, next_state);
+
+    input logic [GRID_SIZE-1:0] pop_count;
+    input logic 	     current_state;
+    output logic      next_state;
+
+    assign next_state = (pop_count == 2 & current_state) | pop_count == 3;
+
 endmodule // rules
-
-
-
-
-
