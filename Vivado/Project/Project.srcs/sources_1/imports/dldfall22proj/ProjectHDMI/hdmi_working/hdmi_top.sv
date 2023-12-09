@@ -91,8 +91,8 @@ module hdmi_top (n2,CLK_125MHZ, HDMI_TX, HDMI_TX_N, HDMI_CLK,
    
    // Color Choice
    logic [23:0] alive, dead;
-   assign alive = {8'hFF, 8'hFF, 8'h00};
-   assign dead  = {8'h00, 8'h00, 8'hFF};
+   assign alive = {8'h07, 8'hFF, 8'hD6};
+   assign dead  = {8'hFF, 8'h00, 8'h00};
 
    always @(posedge CLK_125MHZ)
      begin	

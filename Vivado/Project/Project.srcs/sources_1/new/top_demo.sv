@@ -53,13 +53,30 @@ module top_demo
   logic [16:0] CURRENT_COUNT;
   logic [16:0] NEXT_COUNT;
   logic        smol_clk;
-   
+  logic clkdiv;
+  logic [255:0] seed;
+  logic [255:0] display;
+  logic [255:0] dutout;
+  logic [255:0] keyout; //not important. Was used for the testing phase, is not needed here
+  
   // Place Conway Game of Life instantiation here
- 
+  
+  clk_div dut_1(sysclk_125mhz, btn[0], clkdiv);
+  FSM dut(clkdiv,btn[1],sw[7],seed,display,keyout);
+  
+  //key selector
+  always @(*) begin
+  case(sw[6:5])
+        2'b00   : seed = 255'h00001c1c380000000000000000000000000000004800040044003c0000000000;
+        2'b01   : seed = 255'h0000200020002000000020002000200000000000000000000010001000100000;
+        2'b10   : seed = 255'h0000381c000000000000381c000000000000381c000000000000381c00000000;
+        2'b11   : seed = 255'h00006006600600000700038000000000000000000000700e0000000000000000;
+    endcase
+    end
   // HDMI
   // logic hdmi_out_en;
   //assign hdmi_out_en = 1'b0;
-  hdmi_top test (n2, sysclk_125mhz, hdmi_d_p, hdmi_d_n, hdmi_clk_p, 
+  hdmi_top test (display, sysclk_125mhz, hdmi_d_p, hdmi_d_n, hdmi_clk_p, 
 		         hdmi_clk_n, hdmi_cec, hdmi_sda, hdmi_scl, hdmi_hpd);
   
   // 7-segment display
